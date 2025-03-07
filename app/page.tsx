@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="flex items-center">
             <Link href="/" className="mr-6">
               <Image
-                src="/placeholder.svg?height=40&width=120"
+                src="/assets/logo.jpg"
                 alt="IML Business School Logo"
                 width={120}
                 height={40}
@@ -188,7 +188,7 @@ export default function HomePage() {
         </section>
 
         {/* Vision Section */}
-        <section className="relative bg-[url('/placeholder.svg?height=600&width=1200')] bg-cover bg-fixed bg-center py-24 md:py-32">
+        <section className="relative bg-[url('/assets/1.jpg')] bg-cover bg-fixed bg-center py-24 md:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
           <div className="container relative z-10">
             <div className="mx-auto max-w-3xl text-center text-white">

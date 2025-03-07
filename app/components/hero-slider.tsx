@@ -6,22 +6,22 @@ import Image from "next/image"
 const slides = [
   {
     id: 1,
-    image: "/placeholder.svg?height=600&width=1200&text=Business+School+Environment",
+    image: "/assets/banner1.jpg", 
     alt: "Business School Environment",
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=600&width=1200&text=Students+Learning",
+    image: "/assets/banner2.jpg",
     alt: "Students Learning",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=600&width=1200&text=Corporate+Training",
+    image: "/assets/banner3.jpg",
     alt: "Corporate Training",
   },
   {
     id: 4,
-    image: "/placeholder.svg?height=600&width=1200&text=Online+Learning",
+    image: "/assets/banner4.jpg",
     alt: "Online Learning",
   },
 ]
@@ -41,12 +41,10 @@ export default function HeroSlider() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}
         >
           <Image
-            src={slide.image || "/placeholder.svg"}
+            src={slide.image || "/placeholder.svg"} // Fallback image if necessary
             alt={slide.alt}
             fill
             priority={index === 0}
@@ -67,4 +65,3 @@ export default function HeroSlider() {
     </div>
   )
 }
-
