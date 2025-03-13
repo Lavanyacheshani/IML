@@ -7,25 +7,25 @@ const categories = [
     id: "certificate",
     title: "Certificate Courses",
     description: "Short-term professional development and skill enhancement programs",
-    image: "/placeholder.svg?height=400&width=600&text=Certificate+Courses",
+    image: "/assets/c1.jpg",
   },
   {
     id: "diploma",
     title: "Diploma Courses",
     description: "Comprehensive diploma programs for career advancement",
-    image: "/placeholder.svg?height=400&width=600&text=Diploma+Courses",
+    image: "/assets/c4.jpg",
   },
   {
     id: "postgraduate-diploma",
     title: "Postgraduate Diploma Courses",
     description: "Advanced programs for graduates seeking specialized knowledge",
-    image: "/placeholder.svg?height=400&width=600&text=Postgraduate+Diploma",
+    image: "/assets/c3.jpg",
   },
   {
     id: "mba",
     title: "MBA Programs",
     description: "Master of Business Administration programs for aspiring leaders",
-    image: "/placeholder.svg?height=400&width=600&text=MBA+Programs",
+    image: "/assets/c4.jpg",
   },
 ]
 
