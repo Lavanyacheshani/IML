@@ -9,7 +9,7 @@ const testimonials = [
     id: 1,
     name: "Sarah Johnson",
     role: "MBA Graduate",
-    image: "/placeholder.svg?height=100&width=100&text=Sarah",
+    image: "/placeholder.svg?height=300&width=400&text=Sarah",
     quote:
       "IML Business School transformed my career. The practical approach to learning and industry connections helped me secure a management position right after graduation.",
   },
@@ -17,7 +17,7 @@ const testimonials = [
     id: 2,
     name: "Michael Chen",
     role: "Corporate Training Participant",
-    image: "/placeholder.svg?height=100&width=100&text=Michael",
+    image: "/placeholder.svg?height=300&width=400&text=Michael",
     quote:
       "The corporate training program at IML was exactly what our team needed. The instructors were knowledgeable and the content was directly applicable to our business challenges.",
   },
@@ -25,7 +25,7 @@ const testimonials = [
     id: 3,
     name: "Priya Sharma",
     role: "Executive Education Student",
-    image: "/placeholder.svg?height=100&width=100&text=Priya",
+    image: "/placeholder.svg?height=300&width=400&text=Priya",
     quote:
       "The executive education program exceeded my expectations. The international faculty brought global perspectives that have been invaluable in my leadership role.",
   },
@@ -33,7 +33,7 @@ const testimonials = [
     id: 4,
     name: "David Okafor",
     role: "Online Course Student",
-    image: "/placeholder.svg?height=100&width=100&text=David",
+    image: "/placeholder.svg?height=300&width=400&text=David",
     quote:
       "As a working professional, the flexibility of IML's online courses allowed me to upskill without disrupting my career. The quality of instruction was outstanding.",
   },
@@ -41,9 +41,41 @@ const testimonials = [
     id: 5,
     name: "Amara Perera",
     role: "Business Management Graduate",
-    image: "/placeholder.svg?height=100&width=100&text=Amara",
+    image: "/placeholder.svg?height=300&width=400&text=Amara",
     quote:
       "IML's industry connections and placement assistance helped me secure my dream job. The practical curriculum prepared me for real-world challenges.",
+  },
+  {
+    id: 6,
+    name: "James Wilson",
+    role: "Data Science Certificate Holder",
+    image: "/placeholder.svg?height=300&width=400&text=James",
+    quote:
+      "The data science program at IML gave me the skills I needed to transition into a tech career. The hands-on projects were particularly valuable for building my portfolio.",
+  },
+  {
+    id: 7,
+    name: "Lakshmi Nair",
+    role: "Digital Marketing Graduate",
+    image: "/placeholder.svg?height=300&width=400&text=Lakshmi",
+    quote:
+      "I enrolled in the digital marketing course to boost my small business, and the results have been incredible. The instructors shared practical strategies that I implemented immediately.",
+  },
+  {
+    id: 8,
+    name: "Ahmed Hassan",
+    role: "Project Management Professional",
+    image: "/placeholder.svg?height=300&width=400&text=Ahmed",
+    quote:
+      "The PMP preparation course was comprehensive and well-structured. The mock exams and study materials were excellent, and I passed my certification on the first attempt.",
+  },
+  {
+    id: 9,
+    name: "Elena Rodriguez",
+    role: "International Student",
+    image: "/placeholder.svg?height=300&width=400&text=Elena",
+    quote:
+      "As an international student, I appreciated the supportive environment at IML. The staff helped me navigate cultural differences, and the global perspective in the curriculum was refreshing.",
   },
 ]
 
@@ -93,12 +125,12 @@ export default function TestimonialSlider() {
               index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="mb-6 h-24 w-24 overflow-hidden rounded-full border-4 border-blue-600 shadow-lg transition-transform duration-300 transform hover:scale-110">
+            <div className="mb-6 w-64 h-48 overflow-hidden rounded-lg border-4 border-blue-600 shadow-lg transition-transform duration-300 transform hover:scale-105">
               <Image
                 src={testimonial.image || "/placeholder.svg"}
                 alt={testimonial.name}
-                width={100}
-                height={100}
+                width={300}
+                height={200}
                 className="h-full w-full object-cover"
               />
             </div>
