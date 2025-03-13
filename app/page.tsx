@@ -191,24 +191,43 @@ export default function HomePage() {
               International Visiting Faculty
             </h2>
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
-              {[1, 2, 3].map((item) => (
+              {[
+                {
+                  image: "/assets/p1.jpg",
+                  name: "Dr. John Smith",
+                  position: "Professor of Business Management",
+                  university: "Harvard University",
+                },
+                {
+                  image: "/assets/p2.jpg",
+                  name: "Dr. Sarah Johnson",
+                  position: "Professor of Marketing",
+                  university: "Stanford University",
+                },
+                {
+                  image: "/assets/p3.jpg",
+                  name: "Dr. Michael Chen",
+                  position: "Professor of Finance",
+                  university: "Oxford University",
+                },
+              ].map((faculty, index) => (
                 <div
-                  key={item}
+                  key={index}
                   className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 animate-fade-in-up"
-                  style={{ animationDelay: `${item * 100}ms` }}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-64 w-full overflow-hidden">
                     <Image
-                      src={`/placeholder.svg?height=300&width=300&text=Faculty+${item}`}
-                      alt={`Faculty Member ${item}`}
+                      src={faculty.image || "/placeholder.svg"}
+                      alt={faculty.name}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-primary">Dr. John Smith</h3>
-                    <p className="text-gray-600">Professor of Business Management</p>
-                    <p className="text-sm text-blue-600">Harvard University</p>
+                    <h3 className="text-xl font-bold text-primary">{faculty.name}</h3>
+                    <p className="text-gray-600">{faculty.position}</p>
+                    <p className="text-sm text-blue-600">{faculty.university}</p>
                   </div>
                 </div>
               ))}
