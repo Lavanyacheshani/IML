@@ -10,6 +10,7 @@ import CourseCategories from "@/app/components/course-categories"
 import MainHeader from "@/app/components/main-header"
 import Footer from "@/app/components/footer"
 import HeroAnimation from "@/app/components/hero-animation"
+import { saveRegistration } from "../actions/registration"
 
 export default function HomePage() {
   return (
@@ -157,7 +158,7 @@ export default function HomePage() {
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <CounterAnimation end={23} title="Years of Excellence" />
-              <CounterAnimation end={40} title="Branches Islandwide" suffix="+" />
+              <CounterAnimation end={3} title="Branches Islandwide" suffix="+" />
               <CounterAnimation end={400} title="Full-time Academics" suffix="+" />
               <CounterAnimation end={35000} title="Students" suffix="+" />
             </div>
@@ -194,21 +195,21 @@ export default function HomePage() {
               {[
                 {
                   image: "/assets/p1.jpg",
-                  name: "Dr. John Smith",
-                  position: "Professor of Business Management",
-                  university: "Harvard University",
+                  name: "Puja Talesara",
+                  position: "Leadership Coach",
+                  university: "Re-wire Singapor",
                 },
                 {
                   image: "/assets/p2.jpg",
-                  name: "Dr. Sarah Johnson",
-                  position: "Professor of Marketing",
-                  university: "Stanford University",
+                  name: "Nick Mattone",
+                  position: "Leadership Coach",
+                  university: "John Mattone INC. USA",
                 },
                 {
                   image: "/assets/p3.jpg",
-                  name: "Dr. Michael Chen",
-                  position: "Professor of Finance",
-                  university: "Oxford University",
+                  name: "Rafiya Sultana",
+                  position: "NLP Coach",
+                  university: "Neuroexcel Singapore",
                 },
               ].map((faculty, index) => (
                 <div
