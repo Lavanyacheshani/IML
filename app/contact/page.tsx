@@ -13,7 +13,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-[url('/placeholder.svg?height=400&width=1200&text=Contact+Us')] bg-cover bg-center py-24">
+        <section className="relative bg-[url('/assets/a1.jpeg')] bg-cover bg-center py-24">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
           <HeroAnimation />
           <div className="container relative z-20">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-1">Our Location</h3>
-                      <p className="text-gray-600">No.135E-2/1, Galle Road, Dehiwala, Sri Lanka</p>
+                      <p className="text-gray-600">No.26-2/1, Hill street, Dehiwala, Sri Lanka</p>
                     </div>
                   </div>
 
@@ -179,7 +179,7 @@ export default function ContactPage() {
           <div className="container">
             <div className="rounded-xl overflow-hidden shadow-xl h-[400px] md:h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.575881763312!2d79.86385491477222!3d6.828070095062037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bc5bf49944d%3A0xbf68a247ddcc14b6!2sGalle%20Rd%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1615123456789!5m2!1sen!2slk&markers=color:red%7Clabel:IML%7C6.828070095062037,79.86385491477222"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8757481622354!2d79.86097361477225!3d6.836473395067574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a08a9c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sNo.26-2%2F1%20Hill%20Street%20Dehiwala!5e0!3m2!1sen!2slk!4v1615123456789!5m2!1sen!2slk&markers=color:red%7Clabel:IML%7C6.836473395067574,79.86097361477225"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

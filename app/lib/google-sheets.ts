@@ -1,50 +1,23 @@
-import { GoogleSpreadsheet } from "google-spreadsheet"
-import { JWT } from "google-auth-library"
+import { NextRequest, NextResponse } from 'next/server';
+import { appendToSheet } from '@/lib/google-sheets';
 
-// Google Sheets document ID from the URL
-const SPREADSHEET_ID = "1W2EKkch9HpV8ebpg3WeRW5Fqv8SRw_Uue9WSvmkhk3s"
-const SHEET_ID = 0 // Using the first sheet by default
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwzaHspm3Idmz7GS9qocF4GmIVtYvG1Xl5bCRMEzOi5bfa1KvpgLRAtnMWuURu4VReGqQ/exec";
 
-// Function to initialize and get the Google Sheets document
-export async function getGoogleSheetsDoc() {
+export async function addRowToSheet(rowData: any) {
   try {
-    // Create a JWT client using environment variables
-    const serviceAccountAuth = new JWT({
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "iml-67@iml-business-school.iam.gserviceaccount.com",
-      key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    })
-
-    // Initialize the sheet
-    const doc = new GoogleSpreadsheet(SPREADSHEET_ID, serviceAccountAuth)
-    await doc.loadInfo() // Load document properties and sheets
-
-    return doc
-  } catch (error) {
-    console.error("Error initializing Google Sheets:", error)
-    throw error
-  }
-}
-
-// Function to add a new row to the Google Sheet
-export async function addRowToSheet(rowData: Record<string, any>) {
-  try {
-    const doc = await getGoogleSheetsDoc()
-    const sheet = doc.sheetsById[SHEET_ID]
-
-    // If the sheet is empty, add headers first
-    const rows = await sheet.getRows()
-    if (rows.length === 0) {
-      await sheet.setHeaderRow(Object.keys(rowData))
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(rowData),
+    });
+    const result = await response.json();
+    if (result.result === "success") {
+      return { success: true };
+    } else {
+      return { success: false, error: result.error || "Unknown error" };
     }
-
-    // Add the new row
-    await sheet.addRow(rowData)
-
-    return { success: true }
-  } catch (error) {
-    console.error("Error adding row to Google Sheet:", error)
-    return { success: false, error: error.message }
+  } catch (error: any) {
+    return { success: false, error: error.message };
   }
 }
 

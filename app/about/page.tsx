@@ -13,11 +13,11 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="relative bg-[url('/assets/a1.jpeg')] bg-cover bg-center py-32">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
         <HeroAnimation />
         <div className="container relative z-20">
           <div className="mx-auto max-w-3xl text-center text-white">
-            <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-lg">About IML Business School</h1>
+            <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-lg">About AIML Business School</h1>
             <p className="text-xl leading-relaxed">
               The Institute of Management & Leadership - A leading private education institution in Sri Lanka
             </p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Core Values</h2>
             <div className="w-20 h-1 bg-red-500 mx-auto mb-6"></div>
             <p className="text-gray-700 max-w-3xl mx-auto">
-              At IML, our values guide everything we do. They shape our culture, inform our decisions, and drive our
+              At AIML, our values guide everything we do. They shape our culture, inform our decisions, and drive our
               commitment to excellence in education.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
             <div className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 max-w-3xl">
               <div className="relative h-auto w-full">
                 <Image
-                  src="/assets/logo1.jpg"
+                  src="/assets/logo1.png"
                   alt="Our Partner Organizations"
                   width={800}
                   height={400}
@@ -194,10 +194,10 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose IML</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose AIML</h2>
             <div className="w-20 h-1 bg-red-500 mx-auto mb-6"></div>
             <p className="text-gray-700 max-w-3xl mx-auto">
-              Choosing the right educational institution is a crucial decision. Here's why IML stands out as the
+              Choosing the right educational institution is a crucial decision. Here's why AIML stands out as the
               preferred choice for students and professionals alike.
             </p>
           </div>
@@ -239,9 +239,9 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-blue-900 text-white">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey with IML?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey with AIML?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Take the first step towards a brighter future. Explore our programs and discover how IML can help you
+            Take the first step towards a brighter future. Explore our programs and discover how AIML can help you
             achieve your educational and career goals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

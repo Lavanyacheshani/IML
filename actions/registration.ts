@@ -1,6 +1,6 @@
 "use server"
 
-import { addRowToSheet } from "@/app/lib/google-sheets"
+import { addRowToSheet } from "../app/lib/google-sheets";
 
 export async function saveRegistration(formData: FormData) {
   try {
@@ -38,7 +38,7 @@ export async function saveRegistration(formData: FormData) {
     }
 
     return { success: true }
-  } catch (error) {
+  } catch (error: any) {
     console.error("Registration error:", error)
     return { success: false, error: error.message }
   }

@@ -8,7 +8,7 @@ const slides = [
   {
     id: 1,
     image: "/assets/banner1.jpg",
-    title: "Welcome to IML Business School",
+    title: "Welcome to AIML Business School",
     subtitle: "Empowering Future Leaders",
   },
   {
@@ -84,7 +84,7 @@ export default function HeroSlider() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 w-8 rounded-full transition-colors ${index === currentSlide ? "bg-white" : "bg-white/50"}`}
+            className={`h-2 w-8 rounded-full  -colors ${index === currentSlide ? "bg-white" : "bg-white/50"}`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

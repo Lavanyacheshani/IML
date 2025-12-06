@@ -1,117 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Clock, Users, GraduationCap, Calendar, DollarSign } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import MainHeader from "@/app/components/main-header"
 import Footer from "@/app/components/footer"
 import HeroAnimation from "@/app/components/hero-animation"
-
-// Mock data for courses
-const coursesData = {
-  certificate: [
-    {
-      id: "digital-marketing",
-      title: "Certificate in Digital Marketing",
-      description: "Comprehensive introduction to digital marketing strategies and tools.",
-      duration: "3 months",
-      image: "/placeholder.svg?height=400&width=600&text=Digital+Marketing",
-    },
-    {
-      id: "project-management",
-      title: "Certificate in Project Management",
-      description: "Essential project management skills and methodologies.",
-      duration: "3 months",
-      image: "/placeholder.svg?height=400&width=600&text=Project+Management",
-    },
-    {
-      id: "data-analytics",
-      title: "Certificate in Data Analytics",
-      description: "Introduction to data analysis techniques and tools.",
-      duration: "4 months",
-      image: "/placeholder.svg?height=400&width=600&text=Data+Analytics",
-    },
-  ],
-  diploma: [
-    {
-      id: "business-management",
-      title: "Diploma in Business Management",
-      description: "A comprehensive business diploma covering all aspects of modern business management.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=Business+Management",
-    },
-    {
-      id: "marketing",
-      title: "Diploma in Marketing",
-      description: "Specialized diploma in marketing principles, digital marketing, and brand management.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=Marketing",
-    },
-    {
-      id: "human-resources",
-      title: "Diploma in Human Resource Management",
-      description: "Comprehensive training in HR practices, recruitment, and employee relations.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=HR+Management",
-    },
-  ],
-  "postgraduate-diploma": [
-    {
-      id: "pgd-business",
-      title: "Postgraduate Diploma in Business Administration",
-      description: "Advanced business studies for graduates looking to enhance their management skills.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=PGD+Business",
-    },
-    {
-      id: "pgd-marketing",
-      title: "Postgraduate Diploma in Marketing",
-      description: "Advanced marketing program with focus on strategic marketing management.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=PGD+Marketing",
-    },
-    {
-      id: "pgd-finance",
-      title: "Postgraduate Diploma in Finance",
-      description: "Specialized program in financial management and analysis.",
-      duration: "1 year",
-      image: "/placeholder.svg?height=400&width=600&text=PGD+Finance",
-    },
-  ],
-  mba: [
-    {
-      id: "mba-general",
-      title: "Master of Business Administration",
-      description: "Comprehensive MBA program covering all key areas of business administration.",
-      duration: "2 years",
-      image: "/placeholder.svg?height=400&width=600&text=MBA",
-    },
-    {
-      id: "mba-marketing",
-      title: "MBA in Marketing",
-      description: "Specialized MBA with focus on advanced marketing strategies and leadership.",
-      duration: "2 years",
-      image: "/placeholder.svg?height=400&width=600&text=MBA+Marketing",
-    },
-    {
-      id: "mba-finance",
-      title: "MBA in Finance",
-      description: "Specialized MBA with focus on financial management and strategic financial leadership.",
-      duration: "2 years",
-      image: "/placeholder.svg?height=400&width=600&text=MBA+Finance",
-    },
-  ],
-}
-
-const categoryTitles = {
-  certificate: "Certificate Courses",
-  diploma: "Diploma Courses",
-  "postgraduate-diploma": "Postgraduate Diploma Courses",
-  mba: "MBA Programs",
-}
+import { getCoursesByCategory, categoryTitles, contactInfo, getAllCourses } from "@/lib/course-data"
 
 export default function CoursesPage({ params }: { params: { category: string } }) {
   const { category } = params
-  const courses = coursesData[category as keyof typeof coursesData] || []
+  const courses = getCoursesByCategory(category)
   const categoryTitle = categoryTitles[category as keyof typeof categoryTitles] || "Courses"
 
   return (
@@ -120,7 +18,7 @@ export default function CoursesPage({ params }: { params: { category: string } }
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-[url('/placeholder.svg?height=400&width=1200')] bg-cover bg-center py-24">
+        <section className="relative bg-[url('/assets/banner1.jpg')] bg-cover bg-center py-24">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
           <HeroAnimation />
           <div className="container relative z-20">
@@ -155,16 +53,49 @@ export default function CoursesPage({ params }: { params: { category: string } }
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
+                    {course.featured && (
+                      <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        Featured
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
-                    <div className="mb-4">
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                        Duration: {course.duration}
+                    <div className="mb-4 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                        <Clock className="mr-1 h-3 w-3" />
+                        {course.duration}
                       </span>
+                      {course.investment && (
+                        <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                          <DollarSign className="mr-1 h-3 w-3" />
+                          {course.investment}
+                        </span>
+                      )}
                     </div>
                     <h3 className="mb-2 text-xl font-bold text-primary">{course.title}</h3>
-                    <p className="mb-4 text-gray-600">{course.description}</p>
-                    <div className="flex space-x-2">
+                    <p className="mb-4 text-gray-600 line-clamp-3">{course.description}</p>
+                    
+                    {course.targetAudience && (
+                      <div className="mb-4">
+                        <div className="flex items-center text-sm text-gray-600 mb-1">
+                          <Users className="mr-1 h-4 w-4" />
+                          <span className="font-medium">Target Audience:</span>
+                        </div>
+                        <p className="text-sm text-gray-600 ml-5">{course.targetAudience}</p>
+                      </div>
+                    )}
+
+                    {course.accreditation && (
+                      <div className="mb-4">
+                        <div className="flex items-center text-sm text-gray-600 mb-1">
+                          <GraduationCap className="mr-1 h-4 w-4" />
+                          <span className="font-medium">Accreditation:</span>
+                        </div>
+                        <p className="text-sm text-gray-600 ml-5 line-clamp-2">{course.accreditation}</p>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-2">
                       <Link href={`/courses/${category}/${course.id}`}>
                         <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                           View Details
@@ -193,6 +124,26 @@ export default function CoursesPage({ params }: { params: { category: string } }
                 </Link>
               </div>
             )}
+
+            {/* Contact Information */}
+            <div className="mt-12 bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary mb-4">Need Help?</h3>
+              <p className="text-gray-600 mb-4">
+                For more information about our courses or to register, please contact us:
+              </p>
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center">
+                  <span className="font-medium text-gray-700">Contact:</span>
+                  <span className="ml-2 text-blue-600">{contactInfo.name}</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="font-medium text-gray-700">Phone/WhatsApp:</span>
+                  <a href={`tel:${contactInfo.phone}`} className="ml-2 text-blue-600 hover:underline">
+                    {contactInfo.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -200,5 +151,15 @@ export default function CoursesPage({ params }: { params: { category: string } }
       <Footer />
     </div>
   )
+}
+
+// ✅ Required for static export
+export async function generateStaticParams() {
+  const allCourses = getAllCourses()
+  const uniqueCategories = [...new Set(allCourses.map(course => course.category))]
+
+  return uniqueCategories.map(category => ({
+    category: category,
+  }))
 }
 

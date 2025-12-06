@@ -11,7 +11,7 @@ const testimonials = [
     role: "MBA Graduate",
     image: "/placeholder.svg?height=300&width=400&text=Sarah",
     quote:
-      "IML Business School transformed my career. The practical approach to learning and industry connections helped me secure a management position right after graduation.",
+      "AIML Business School transformed my career. The practical approach to learning and industry connections helped me secure a management position right after graduation.",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const testimonials = [
     role: "Business Management Graduate",
     image: "/placeholder.svg?height=300&width=400&text=Amara",
     quote:
-      "IML's industry connections and placement assistance helped me secure my dream job. The practical curriculum prepared me for real-world challenges.",
+      "AIML's industry connections and placement assistance helped me secure my dream job. The practical curriculum prepared me for real-world challenges.",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const testimonials = [
     role: "Data Science Certificate Holder",
     image: "/placeholder.svg?height=300&width=400&text=James",
     quote:
-      "The data science program at IML gave me the skills I needed to transition into a tech career. The hands-on projects were particularly valuable for building my portfolio.",
+      "The data science program at AIML gave me the skills I needed to transition into a tech career. The hands-on projects were particularly valuable for building my portfolio.",
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const testimonials = [
     role: "International Student",
     image: "/placeholder.svg?height=300&width=400&text=Elena",
     quote:
-      "As an international student, I appreciated the supportive environment at IML. The staff helped me navigate cultural differences, and the global perspective in the curriculum was refreshing.",
+      "As an international student, I appreciated the supportive environment at AIML. The staff helped me navigate cultural differences, and the global perspective in the curriculum was refreshing.",
   },
 ]
 
@@ -98,54 +98,46 @@ export default function TestimonialSlider() {
   }
 
   return (
-    <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl bg-white p-8 shadow-2xl animate-fade-in-up">
-      <div className="absolute left-4 top-1/2 z-10 -translate-y-1/2">
+    <div className="relative mx-auto max-w-2xl overflow-hidden rounded-xl bg-white/90 p-4 shadow-md animate-fade-in-up my-8">
+      <div className="absolute left-2 top-1/2 z-10 -translate-y-1/2">
         <button
           onClick={prevSlide}
-          className="rounded-full bg-blue-600 p-3 text-white shadow-md transition-colors hover:bg-blue-700 transform hover:scale-105"
+          className="rounded-full bg-blue-600 p-2 text-white shadow transition-colors hover:bg-blue-700 transform hover:scale-105"
           aria-label="Previous testimonial"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5" />
         </button>
       </div>
-      <div className="absolute right-4 top-1/2 z-10 -translate-y-1/2">
+      <div className="absolute right-2 top-1/2 z-10 -translate-y-1/2">
         <button
           onClick={nextSlide}
-          className="rounded-full bg-blue-600 p-3 text-white shadow-md transition-colors hover:bg-blue-700 transform hover:scale-105"
+          className="rounded-full bg-blue-600 p-2 text-white shadow transition-colors hover:bg-blue-700 transform hover:scale-105"
           aria-label="Next testimonial"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5" />
         </button>
       </div>
-      <div className="relative h-[400px]">
+      <div className="relative h-[220px]">
         {testimonials.map((testimonial, index) => (
           <div
             key={testimonial.id}
-            className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-500 ${
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-500 px-2 ${
               index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="mb-6 w-64 h-48 overflow-hidden rounded-lg border-4 border-blue-600 shadow-lg transition-transform duration-300 transform hover:scale-105">
-              <Image
-                src={testimonial.image || "/placeholder.svg"}
-                alt={testimonial.name}
-                width={300}
-                height={200}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <p className="mb-6 text-center text-xl italic text-gray-700">&ldquo;{testimonial.quote}&rdquo;</p>
-            <h4 className="text-center text-2xl font-bold text-blue-600">{testimonial.name}</h4>
-            <p className="text-center text-lg text-gray-600">{testimonial.role}</p>
+            {/* Removed image section */}
+            <p className="mb-4 text-center text-base italic text-gray-700 max-w-xl mx-auto">&ldquo;{testimonial.quote}&rdquo;</p>
+            <h4 className="text-center text-lg font-semibold text-blue-600 mt-1">{testimonial.name}</h4>
+            <p className="text-center text-sm text-gray-600">{testimonial.role}</p>
           </div>
         ))}
       </div>
-      <div className="mt-8 flex justify-center space-x-3">
+      <div className="mt-4 flex justify-center space-x-2">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-3 w-12 rounded-full transition-colors ${
+            className={`h-2 w-6 rounded-full transition-colors ${
               index === currentSlide ? "bg-blue-600" : "bg-gray-300"
             }`}
             aria-label={`Go to testimonial ${index + 1}`}

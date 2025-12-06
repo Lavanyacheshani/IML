@@ -1,30 +1,37 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { categoryTitles, categoryDescriptions } from "@/lib/course-data"
 
 const categories = [
   {
     id: "certificate",
-    title: "Certificate Courses",
-    description: "Short-term professional development and skill enhancement programs",
+    title: categoryTitles.certificate,
+    description: categoryDescriptions.certificate,
     image: "/assets/c1.jpg",
   },
   {
     id: "diploma",
-    title: "Diploma Courses",
-    description: "Comprehensive diploma programs for career advancement",
+    title: categoryTitles.diploma,
+    description: categoryDescriptions.diploma,
     image: "/assets/c4.jpg",
   },
   {
     id: "postgraduate-diploma",
-    title: "Postgraduate Diploma Courses",
-    description: "Advanced programs for graduates seeking specialized knowledge",
+    title: categoryTitles["postgraduate-diploma"],
+    description: categoryDescriptions["postgraduate-diploma"],
     image: "/assets/c3.jpg",
   },
   {
+    id: "professional",
+    title: categoryTitles.professional,
+    description: categoryDescriptions.professional,
+    image: "/assets/c2.jpg",
+  },
+  {
     id: "mba",
-    title: "MBA Programs",
-    description: "Master of Business Administration programs for aspiring leaders",
+    title: categoryTitles.mba,
+    description: categoryDescriptions.mba,
     image: "/assets/c4.jpg",
   },
 ]

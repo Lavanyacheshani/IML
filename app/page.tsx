@@ -7,6 +7,7 @@ import HeroSlider from "@/app/components/hero-slider"
 import CounterAnimation from "@/app/components/counter-animation"
 import TestimonialSlider from "@/app/components/testimonial-slider"
 import CourseCategories from "@/app/components/course-categories"
+import FeaturedCourses from "@/app/components/featured-courses"
 import MainHeader from "@/app/components/main-header"
 import Footer from "@/app/components/footer"
 import HeroAnimation from "@/app/components/hero-animation"
@@ -47,7 +48,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-4 animate-fade-in-left">
                 Welcome to <br />
                 <span className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  <span className="text-red-600">IML</span>
+                  <span className="text-red-600">AIML</span>
                   <span className="text-blue-600"> Business</span>
                   <span className="text-yellow-500"> School</span>
                 </span>
@@ -62,7 +63,7 @@ export default function HomePage() {
                 are known for the rigor and quality of our programmes.
               </p>
               <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                Founded in 2018 on the initiative of the smart learning and education for all concept. IML is a
+                Founded in 2018 on the initiative of the smart learning and education for all concept. AIML is a
                 professional institute with over 1000+ individual and corporate learners who have access to a wide range
                 of learning courses, published resources, and networking events.
               </p>
@@ -127,7 +128,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center animate-fade-in-up animation-delay-600">
                 <Link href="/about">
-                  
+
                 </Link>
               </div>
             </div>
@@ -157,10 +158,10 @@ export default function HomePage() {
               Our Strength
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              <CounterAnimation end={23} title="Years of Excellence" />
-              <CounterAnimation end={3} title="Branches Islandwide" suffix="+" />
-              <CounterAnimation end={400} title="Full-time Academics" suffix="+" />
-              <CounterAnimation end={35000} title="Students" suffix="+" />
+              <CounterAnimation end={8} title="Years of Excellence" />
+              <CounterAnimation end={1} title="Branches Islandwide" suffix="+" />
+              <CounterAnimation end={25} title="Part-time Academics" suffix="+" />
+              <CounterAnimation end={1000} title="Students" suffix="+" />
             </div>
           </div>
         </section>
@@ -174,6 +175,9 @@ export default function HomePage() {
             <CourseCategories />
           </div>
         </section>
+
+        {/* Featured Courses Section */}
+        <FeaturedCourses />
 
         {/* Testimonials Section */}
         <section className="bg-white py-16 md:py-24">

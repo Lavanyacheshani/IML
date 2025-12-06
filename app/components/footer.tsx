@@ -7,7 +7,6 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  Youtube,
   Mail,
   Phone,
   MapPin,
@@ -42,34 +41,57 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: About */}
           <div className="animate-fade-in-up">
-            <div className="mb-6">
-              <Image
-                src="/placeholder.svg?height=60&width=180&text=IML+Business+School"
-                alt="IML Business School Logo"
-                width={180}
-                height={60}
-                className="brightness-0 invert"
-              />
-            </div>
+
             <p className="mb-6 text-gray-300 leading-relaxed">
-              IML Business School is a leading private education institution in Sri Lanka offering diverse education
+              Asian Institute of Management & Leadership (AIML) Business School is a leading private education institution in Sri Lanka offering diverse education
               pathways and professional training for future leaders.
             </p>
+
+            {/* UPDATED SOCIAL MEDIA ICONS */}
             <div className="flex space-x-3">
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300">
+              <a
+                href="https://www.facebook.com/share/15w6ar2ZGM/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300"
+              >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300">
+
+              <a
+                href="https://www.instagram.com/aiml_sl/?utm_source=qr&igsh=Y2owOGU3NDRveHQz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300"
+              >
                 <Instagram size={18} />
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300">
+
+              <a
+                href="https://www.linkedin.com/school/aimlsl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300">
-                <Youtube size={18} />
+
+              <a
+                href="https://x.com/OfficialAIML"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300"
+              >
+                <Twitter size={18} />
+              </a>
+
+              <a
+                href="https://wa.me/94768545962"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors duration-300"
+              >
+                <MessageCircle size={18} />
               </a>
             </div>
           </div>
@@ -130,7 +152,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <MapPin className="mr-3 mt-1 text-blue-300 flex-shrink-0" size={18} />
-                <span>No.135E-2/1, Galle Road, Dehiwala, Sri Lanka</span>
+                <span>No.26-2/1, Hill street, Dehiwala, Sri Lanka</span>
               </li>
               <li className="flex items-start">
                 <Clock className="mr-3 mt-1 text-blue-300 flex-shrink-0" size={18} />
@@ -175,18 +197,13 @@ export default function Footer() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © {currentYear} IML Business School. All rights reserved.
+              © {currentYear} Asian Institute of Management & Leadership (AIML) Business School. All rights reserved.
+              <span className="block md:inline ml-0 md:ml-4 text-blue-500 font-semibold">TVEC Registered P01/0961</span>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Sitemap
-              </Link>
+              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="#" className="hover:text-white transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>
@@ -194,4 +211,3 @@ export default function Footer() {
     </footer>
   )
 }
-

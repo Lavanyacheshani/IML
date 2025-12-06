@@ -12,7 +12,7 @@ export default function ExamResultsPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-[url('/placeholder.svg?height=400&width=1200&text=Exam+Results')] bg-cover bg-center py-24">
+        <section className="relative bg-[url('/assets/a1.jpeg')] bg-cover bg-center py-24">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-900/90"></div>
           <HeroAnimation />
           <div className="container relative z-20">
